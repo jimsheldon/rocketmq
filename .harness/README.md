@@ -46,6 +46,6 @@ This is a fork of apache/rocketmq project. This file contains instructions on ho
 
 8. Enable GitHub Actions : The repository forked in Step 2 already has a `GitHub Actions` workflow file added. You can choose to enable this workflow from the `Actions` tab on GitHub.
 
-9. Create any other `Pull Request` with a few source or test file changes. You can consider cherry-picking any of the commits from the `RocketMQ` repo such as [this one](https://github.com/Aishwarya-Lad/rocketmq/pull/3)
+9. Create any other `Pull Request` with a few source or test file changes. You can consider cherry-picking any of the commits from the `RocketMQ` repo such as [this one](https://github.com/harness-community/rocketmq/pull/2)
 
 10. This PR will trigger the Harness CI pipeline (as well as GitHub Actions workflow if enabled in Step-8). Depending on what files got changed in the PR, only those tests related to the changed source/test code will be selected to run in the Harness pipeline. GitHub Actions workflow, however, will run all the unit tests for every PR.
