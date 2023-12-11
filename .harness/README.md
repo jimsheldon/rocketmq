@@ -40,7 +40,7 @@ This is a fork of apache/rocketmq project. This file contains instructions on ho
 * The generated yaml should look like below.
   <img width="1050" alt="cikafkademo" src="TI_RocketMQ.png">
 
-6. Create a Pull Request in a new branch by updating the `build.gradle` file. (e.g. add a comment or new line). This should trigger a build in Harness CI
+6. Create a Pull Request in a new branch by updating the `BUILD.bazel` file. (e.g. add a comment or new line). This should trigger a build in Harness CI
 
 7. Merge the PR after the pipeline runs successfully.
 
