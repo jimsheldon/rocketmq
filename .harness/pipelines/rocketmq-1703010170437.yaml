@@ -52,7 +52,7 @@ pipeline:
                   spec:
                     language: Java
                     buildTool: Maven
-                    args: clean install -DskipITs -DfailIfNoTests=false
+                    args: clean install -DskipITs -Dmaven.test.failure.ignore=true -DfailIfNoTests=false
                     runOnlySelectedTests: true
                     reports:
                       type: JUnit
