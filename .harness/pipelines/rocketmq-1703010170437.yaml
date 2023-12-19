@@ -45,7 +45,6 @@ pipeline:
                       echo $PATH
                       which mvn
                       which java
-                      which jvm
               - step:
                   type: RunTests
                   name: Run Tests
