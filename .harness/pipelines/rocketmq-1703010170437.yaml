@@ -36,6 +36,17 @@ pipeline:
                       java-version: "8"
                       distribution: adopt
               - step:
+                  type: Run
+                  name: Test
+                  identifier: Test
+                  spec:
+                    shell: Sh
+                    command: |-
+                      echo $PATH
+                      which mvn
+                      which java
+                      which jvm
+              - step:
                   type: RunTests
                   name: Run Tests
                   identifier: Run_Tests
