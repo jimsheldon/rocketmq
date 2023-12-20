@@ -27,13 +27,44 @@ pipeline:
           execution:
             steps:
               - step:
+                  type: Run
+                  name: Test
+                  identifier: Test1
+                  spec:
+                    shell: Sh
+                    command: |-
+                      echo $PATH
+                      which mvn
+                      which java
+                      java --version
+              - step:
+                  type: Action
+                  name: Set up JDK 11
+                  identifier: Set_up_JDK_11
+                  spec:
+                    uses: actions/setup-java@v2
+                    with:
+                      java-version: "11"
+                      distribution: temurin
+              - step:
+                  type: Run
+                  name: Test
+                  identifier: Test2
+                  spec:
+                    shell: Sh
+                    command: |-
+                      echo $PATH
+                      which mvn
+                      which java
+                      java --version
+              - step:
                   type: RunTests
                   name: Run Tests
                   identifier: Run_Tests
                   spec:
                     language: Java
                     buildTool: Maven
-                    args: clean install -DskipITs -Dmaven.test.failure.ignore=true -DfailIfNoTests=false
+                    args: clean install -Dsurefire.rerunFailingTestsCount=5 -DskipITs -DfailIfNoTests=false
                     runOnlySelectedTests: true
                     reports:
                       type: JUnit
@@ -41,3 +72,4 @@ pipeline:
                         paths:
                           - "**/*.xml"
                     enableTestSplitting: true
+        timeout: 60m
